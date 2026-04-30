@@ -1,0 +1,143 @@
+.vn-engine {
+  position: relative;
+  flex: 1;
+  min-height: 100svh;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.vn-engine__controls {
+  position: absolute;
+  bottom: 11rem;
+  right: 1rem;
+  z-index: 4;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.vn-engine__controls button {
+  font: inherit;
+  font-size: 0.875rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--code-bg);
+  color: var(--text-h);
+  cursor: pointer;
+}
+
+.vn-engine__controls button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.vn-engine__controls button:hover {
+  border-color: var(--accent-border);
+}
+
+.vn-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.vn-engine__stage {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 1rem 1.25rem 6rem;
+  gap: 1rem;
+  pointer-events: none;
+}
+
+.vn-engine__stage > * {
+  pointer-events: auto;
+}
+
+.vn-character {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.vn-character__placeholder {
+  width: min(200px, 28vw);
+  aspect-ratio: 3 / 4;
+  border-radius: 12px;
+  border: 2px dashed var(--border);
+  background: color-mix(in srgb, var(--code-bg) 70%, transparent);
+}
+
+.vn-character__label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-h);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.vn-evidence {
+  max-width: 220px;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow);
+}
+
+.vn-evidence__title {
+  font-size: 1rem;
+  margin: 0 0 0.35rem;
+  color: var(--text-h);
+}
+
+.vn-evidence__stub {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.vn-dialogue {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+  padding: 1rem 1.25rem 1.25rem;
+  border-top: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(8px);
+  min-height: 6.5rem;
+}
+
+.vn-dialogue__speaker {
+  margin: 0 0 0.35rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.vn-dialogue__text {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.45;
+  color: var(--text-h);
+}
+
+.vn-dialogue__empty {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.9375rem;
+}
