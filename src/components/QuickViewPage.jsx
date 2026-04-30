@@ -77,7 +77,7 @@ export default function QuickViewPage() {
           </button>
         </div>
 
-        <div className="grid min-h-0 flex-1 grid-cols-2 gap-[6px] pb-2 md:grid-cols-4 md:pb-0">
+        <div className="grid min-h-0 flex-1 grid-cols-2 gap-[6px] pb-2 md:grid-cols-4 md:pb-2">
           {linkItems.map(({ label, href, key, iconSrc }) => {
             const isExternal = /^https?:\/\//.test(href)
             const isCv = key === 'cv'
