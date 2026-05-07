@@ -96,7 +96,7 @@ export default function WorkDetailsSandLite1000Page() {
         <div className="flex items-center justify-between px-[2px]">
           <button
             type="button"
-            onClick={() => navigate('/quick-view')}
+            onClick={() => navigate('/quick-view', { state: { focusFeaturedWorks: true } })}
             className={topIconButtonClass}
             aria-label="Back"
           >
@@ -117,7 +117,7 @@ export default function WorkDetailsSandLite1000Page() {
           </button>
         </div>
 
-        <div className="grid min-h-0 flex-1 grid-cols-2 gap-[6px] pb-2 md:grid-cols-4 md:pb-0">
+        <div className="grid min-h-0 flex-1 grid-cols-2 gap-[6px] pb-2 md:grid-cols-4 md:pb-2">
           {linkItems.map(({ label, href, key, iconSrc }) => {
             const isExternal = /^https?:\/\//.test(href)
             const isCv = key === 'cv'

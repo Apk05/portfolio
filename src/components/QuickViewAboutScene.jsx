@@ -1,4 +1,5 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { useLayoutEffect, useRef } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 // Figma: About Me (425:1600) — icon URLs from Figma export; replace with /public assets when they expire
 const imgVelocity =
@@ -150,6 +151,16 @@ const experienceItems = [
 
 export default function QuickViewAboutScene() {
   const navigate = useNavigate()
+  const location = useLocation()
+  const featuredWorksSectionRef = useRef(null)
+
+  useLayoutEffect(() => {
+    if (!location.state?.focusFeaturedWorks) return
+    const el = featuredWorksSectionRef.current
+    if (!el) return
+    el.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' })
+    navigate(`${location.pathname}${location.search}`, { replace: true, state: {} })
+  }, [location.pathname, location.search, location.state?.focusFeaturedWorks, navigate])
 
   return (
     <div className="overscroll-none flex h-auto flex-col gap-2 overflow-y-auto p-2 font-retro bg-retro-charcoal950 md:h-full md:min-h-0 md:flex-row md:gap-6 md:overflow-x-auto md:overflow-y-hidden md:p-4">
@@ -221,7 +232,10 @@ export default function QuickViewAboutScene() {
         </div>
       </section>
 
-      <section className="flex w-full min-w-0 flex-col md:h-full md:min-h-0 md:min-w-[860px] md:shrink-0 md:snap-start">
+      <section
+        ref={featuredWorksSectionRef}
+        className="flex w-full min-w-0 flex-col md:h-full md:min-h-0 md:min-w-[860px] md:shrink-0 md:snap-start"
+      >
         <h2 className="shrink-0 py-2 text-center text-[20px] uppercase text-retro-charcoal500 md:text-[24px]">
           Featured Works
         </h2>
@@ -229,10 +243,15 @@ export default function QuickViewAboutScene() {
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-2 md:h-full md:grid-cols-3 md:auto-rows-fr">
             {featuredWorkItems.map(({ id, title }) => {
               const isLaPersona = id === 'la-persona'
+              const isKrgogoods = id === 'krgogoods'
               const isSandLite = id === 'sand-lite-1000'
-              const isEnabled = isLaPersona || isSandLite
-              const Wrapper = isLaPersona ? Link : 'article'
-              const wrapperProps = isLaPersona ? { to: '/work/la-persona' } : {}
+              const isEnabled = isLaPersona || isKrgogoods || isSandLite
+              const Wrapper = isLaPersona || isKrgogoods ? Link : 'article'
+              const wrapperProps = isLaPersona
+                ? { to: '/work/la-persona' }
+                : isKrgogoods
+                  ? { to: '/work/krgogoods' }
+                  : {}
 
               return (
                 isSandLite ? (
