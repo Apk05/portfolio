@@ -46,7 +46,7 @@ const plusIconSrc = '/assets/icons/Icon=plus, size=md.svg'
 const featuredWorkItems = [
   { id: 'la-persona', title: 'La Persona' },
   { id: 'krgogoods', title: 'Krgogoods' },
-  { id: 'apm-help', title: 'APM Help' },
+  { id: 'coco-original', title: 'COCO ORIGINAL' },
   { id: 'playnvoice', title: 'PlaynVoice' },
   { id: 'duo-design-club', title: 'Duo Design Club' },
   { id: 'sand-lite-1000', title: 'SAND LITE 1000' },
@@ -158,8 +158,11 @@ export default function QuickViewAboutScene() {
     if (!location.state?.focusFeaturedWorks) return
     const el = featuredWorksSectionRef.current
     if (!el) return
-    el.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' })
-    navigate(`${location.pathname}${location.search}`, { replace: true, state: {} })
+    el.scrollIntoView({ behavior: 'instant', block: 'start', inline: 'start' })
+    const path = `${location.pathname}${location.search}`
+    requestAnimationFrame(() => {
+      navigate(path, { replace: true, state: {} })
+    })
   }, [location.pathname, location.search, location.state?.focusFeaturedWorks, navigate])
 
   return (
@@ -244,14 +247,17 @@ export default function QuickViewAboutScene() {
             {featuredWorkItems.map(({ id, title }) => {
               const isLaPersona = id === 'la-persona'
               const isKrgogoods = id === 'krgogoods'
+              const isCocoOriginal = id === 'coco-original'
               const isSandLite = id === 'sand-lite-1000'
-              const isEnabled = isLaPersona || isKrgogoods || isSandLite
-              const Wrapper = isLaPersona || isKrgogoods ? Link : 'article'
+              const isEnabled = isLaPersona || isKrgogoods || isCocoOriginal || isSandLite
+              const Wrapper = isLaPersona || isKrgogoods || isCocoOriginal ? Link : 'article'
               const wrapperProps = isLaPersona
                 ? { to: '/work/la-persona' }
                 : isKrgogoods
                   ? { to: '/work/krgogoods' }
-                  : {}
+                  : isCocoOriginal
+                    ? { to: '/work/coco-original' }
+                    : {}
 
               return (
                 isSandLite ? (
