@@ -47,9 +47,9 @@ const featuredWorkItems = [
   { id: 'la-persona', title: 'La Persona' },
   { id: 'krgogoods', title: 'Krgogoods' },
   { id: 'coco-original', title: 'COCO ORIGINAL' },
+  { id: 'sand-lite-1000', title: 'SAND LITE 1000' },
   { id: 'playnvoice', title: 'PlaynVoice' },
   { id: 'duo-design-club', title: 'Duo Design Club' },
-  { id: 'sand-lite-1000', title: 'SAND LITE 1000' },
 ]
 
 // Swap tool icons by only editing this map.
