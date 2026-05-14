@@ -41,6 +41,8 @@ const strengths = [
   },
 ]
 
+const SHOW_CORE_STRENGTHS = false
+
 const plusIconSrc = '/assets/icons/Icon=plus, size=md.svg'
 
 const featuredWorkItems = [
@@ -192,7 +194,8 @@ export default function QuickViewAboutScene() {
         </div>
       </section>
 
-      <section className="hidden flex w-full min-w-0 flex-col md:h-full md:min-h-0 md:min-w-[520px] md:shrink-0 md:snap-start">
+      {SHOW_CORE_STRENGTHS && (
+        <section className="flex w-full min-w-0 flex-col md:h-full md:min-h-0 md:min-w-[520px] md:shrink-0 md:snap-start">
         <h2 className="shrink-0 py-2 text-center text-[20px] uppercase text-retro-charcoal500 md:text-[24px]">
           Core Strengths
         </h2>
@@ -234,6 +237,7 @@ export default function QuickViewAboutScene() {
           </div>
         </div>
       </section>
+      )}
 
       <section
         ref={featuredWorksSectionRef}
