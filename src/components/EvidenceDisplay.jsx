@@ -71,10 +71,10 @@ export default function EvidenceDisplay({
   const evidenceCount = displayEvidenceItems.length
   const gridLayoutClass =
   evidenceCount >= 3
-    ? 'max-w-[170px] grid-cols-1 md:max-w-[980px] md:grid-cols-3'
+    ? 'max-w-[120px] grid-cols-1 md:max-w-[980px] md:grid-cols-3'
     : evidenceCount === 2
-      ? 'max-w-[170px] grid-cols-1 md:max-w-[680px] md:grid-cols-2'
-      : 'max-w-[220px] grid-cols-1'
+      ? 'max-w-[120px] grid-cols-1 md:max-w-[680px] md:grid-cols-2'
+      : 'max-w-[160px] grid-cols-1'
 
   return (
     <aside
