@@ -70,11 +70,17 @@ export default function EvidenceDisplay({
 
   const evidenceCount = displayEvidenceItems.length
   const gridLayoutClass =
-  evidenceCount >= 3
-    ? 'max-w-[120px] grid-cols-1 md:max-w-[980px] md:grid-cols-3'
-    : evidenceCount === 2
-      ? 'max-w-[120px] grid-cols-1 md:max-w-[680px] md:grid-cols-2'
-      : 'max-w-[160px] grid-cols-1'
+    evidenceCount >= 3
+      ? 'max-w-[120px] grid-cols-1 md:max-w-[980px] md:grid-cols-3'
+      : evidenceCount === 2
+        ? 'max-w-[120px] grid-cols-1 md:max-w-[680px] md:grid-cols-2'
+        : 'max-w-[200px] grid-cols-1'
+
+  const cardAnimationStyle = {
+    animation: `${
+      isExiting ? 'evidenceCardOut' : 'evidenceCardIn'
+    } ${EVIDENCE_ANIMATION_MS}ms cubic-bezier(0.22, 1, 0.36, 1) forwards`,
+  }
 
   return (
     <aside
@@ -107,11 +113,7 @@ export default function EvidenceDisplay({
           <div
             key={evidenceKey}
             className="relative overflow-hidden rounded-2xl border-4 border-solid border-retro-charcoal400 bg-retro-stone shadow-xl backdrop-blur-sm"
-            style={{
-              animation: `${
-                isExiting ? 'evidenceCardOut' : 'evidenceCardIn'
-              } ${EVIDENCE_ANIMATION_MS}ms cubic-bezier(0.22, 1, 0.36, 1) forwards`,
-            }}
+            style={cardAnimationStyle}
           >
             <img
               src={src}
@@ -119,7 +121,7 @@ export default function EvidenceDisplay({
               className="block h-auto w-full object-contain bg-black/5"
             />
             <div
-              className="absolute inset-0"
+              className="pointer-events-none absolute inset-0"
               style={{
                 backgroundColor: '#0a0a0a',
                 backgroundImage:
