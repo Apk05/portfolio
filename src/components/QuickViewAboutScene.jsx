@@ -179,16 +179,12 @@ export default function QuickViewAboutScene() {
               <span className="font-normal uppercase text-retro-textLight">Aung Pyae Kyaw</span>
               <span className="text-retro-textLight">
                 {' '}
-                - Creative designer based in Bangkok, Thailand. I am a designer who blends
-                the speed of AI with strong, traditional design skills. Based in Bangkok, I
-                work with clients worldwide to create clean, professional visuals. My focus
-                is on{' '}
+                - Product and Brand Designer focused on building digital experiences 
+                that  drive results. I prototype B2B platforms that secure  users before development 
+                even starts and design e-commerce sites that generate launch-day 
+                sales. I combine clean visual design with rapid AI workflows to 
+                turn ambitious ideas into live, market-ready products fast.
               </span>
-              <span className="font-normal text-retro-textLight">
-                working quickly, having a great eye for detail, and delivering
-                high-quality designs
-              </span>
-              <span className="text-retro-textLight"> that help businesses succeed.</span>
             </p>
           </div>
         </div>
