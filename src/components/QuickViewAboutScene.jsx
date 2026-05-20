@@ -115,7 +115,7 @@ const toolGroups = [
 const experienceItems = [
   {
     id: 'senior-creative',
-    title: 'Co-Founder & Founding Designer',
+    title: 'Founding Designer',
     meta: 'La Persona · 2025-Present',
     bullets: [
       'Purpose: Build a modern digital ID platform alternative to traditional business cards.',
@@ -142,7 +142,7 @@ const experienceItems = [
   },
   {
     id: 'junior-designer',
-    title: 'Founder & Curator',
+    title: 'Curator',
     meta: 'Duo Design Club · Passion Project: 2025 – Present',
     bullets: [
       'Purpose: Support the creative community in Myanmar.',
