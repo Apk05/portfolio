@@ -168,7 +168,7 @@ export default function QuickViewAboutScene() {
   }, [location.pathname, location.search, location.state?.focusFeaturedWorks, navigate])
 
   return (
-    <div className="overscroll-none flex h-auto flex-col gap-2 overflow-y-auto p-2 font-retro bg-retro-charcoal950 md:h-full md:min-h-0 md:flex-row md:gap-6 md:overflow-x-auto md:overflow-y-hidden md:p-4">
+    <div className="flex h-auto flex-col gap-2 p-2 font-retro bg-retro-charcoal950 md:h-full md:min-h-0 md:flex-row md:gap-6 md:overflow-x-auto md:overflow-y-hidden md:overscroll-none md:p-4">
       <section className="flex w-full min-w-0 flex-col rounded-[20px] md:h-full md:min-h-0 md:w-[500px] md:min-w-[760px] md:max-w-[500px] md:shrink-0 md:snap-start">
         <h2 className="shrink-0 py-2 text-center text-[20px] uppercase text-retro-charcoal500 md:text-[24px]">
           Identity

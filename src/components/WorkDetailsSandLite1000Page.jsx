@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { quickViewLinks } from '../config/quickViewLinks.js'
+import { getWorkMediaFrameClass } from '../config/workDetailsMedia.js'
 
 const mediaItems = [
   { id: '1', type: 'video', src: '/assets/Works/The Sand Studio/1.MP4', narrow: true },
@@ -77,7 +78,7 @@ export default function WorkDetailsSandLite1000Page() {
           {mediaItems.map(({ id, src, narrow = false }) => (
             <article
               key={id}
-              className="relative h-[340px] w-auto shrink-0 overflow-hidden rounded-xl border-[3px] border-solid border-retro-charcoal800 bg-retro-charcoal900 md:h-[380px]"
+              className={`relative shrink-0 overflow-hidden rounded-xl border-[3px] border-solid border-retro-charcoal800 bg-retro-charcoal900 ${getWorkMediaFrameClass(narrow)}`}
             >
               <video
                 src={src}

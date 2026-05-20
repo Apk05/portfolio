@@ -42,7 +42,7 @@ export default function QuickViewPage() {
   return (
     <main className="mx-auto flex h-[100dvh] w-full max-w-[1440px] flex-col gap-0 overflow-hidden bg-retro-base px-5 py-1 text-retro-textLight md:h-screen md:gap-2 md:py-3">
       <div className="relative h-[50vh] md:h-[60vh] min-h-0 overflow-hidden rounded-[32px] border-[6px] border-solid border-retro-charcoalShadow bg-retro-stone">
-        <div className="absolute inset-0 min-h-0 overflow-y-auto">
+        <div className="absolute inset-0 min-h-0 overflow-y-auto overscroll-contain [-webkit-overflow-scrolling:touch]">
           <QuickViewAboutScene />
         </div>
       </div>

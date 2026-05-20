@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { quickViewLinks } from '../config/quickViewLinks.js'
+import { getWorkMediaFrameClass } from '../config/workDetailsMedia.js'
 
 const mediaItems = [
   { id: '1', type: 'image', src: '/assets/Works/coco-original/cocosite-1.jpg' },
@@ -79,11 +80,7 @@ export default function WorkDetailsCocoOriginalPage() {
           {mediaItems.map(({ id, type, src, narrow = false }) => (
             <article
               key={id}
-              className={`relative shrink-0 overflow-hidden rounded-xl border-[3px] border-solid border-retro-charcoal800 bg-retro-charcoal900 ${
-                narrow
-                  ? 'h-[300px] w-auto self-center md:h-[320px]'
-                  : 'h-[340px] w-auto md:h-[380px]'
-              }`}
+              className={`relative shrink-0 overflow-hidden rounded-xl border-[3px] border-solid border-retro-charcoal800 bg-retro-charcoal900 ${getWorkMediaFrameClass(narrow)}`}
             >
               {type === 'video' ? (
                 <video
