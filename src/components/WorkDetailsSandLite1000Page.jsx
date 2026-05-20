@@ -126,7 +126,7 @@ export default function WorkDetailsSandLite1000Page() {
                 key={key}
                 href={href}
                 className={storyEnabledClass}
-                {...(isCv ? { download: 'Aung-Pyae-Kyaw-CV.pdf' } : {})}
+                {...(isCv ? { download: quickViewLinks.cvDownloadFilename } : {})}
                 {...(isExternal ? { target: '_blank', rel: 'noreferrer' } : {})}
               >
                 <span className="text-[24px] uppercase leading-none">{label}</span>
